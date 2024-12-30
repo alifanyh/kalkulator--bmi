@@ -107,6 +107,7 @@ document
   .addEventListener("click", function () {
     //Menambahkan event listerner pada tombol ketika di klik
     var resultElement = document.getElementById("result-calculation"); //Mengambil hasil perhitungan BMI
+     var kategoriElement = document.querySelector(".form-result p:nth-child(3)");
 
     // Menggunakan jsPDF untuk membuat file PDF
     const { jsPDF } = window.jspdf;

@@ -1,2 +1,2 @@
-# kalkulator--bmi
+# kalkulator-bmi
 Membuat Website Sederhana Kalkulator BMI 

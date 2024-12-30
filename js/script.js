@@ -105,9 +105,10 @@ function resetcalcbmi(event) {
 document
   .getElementById("download-bmi-pdf")
   .addEventListener("click", function () {
-    //Menambahkan event listerner pada tombol ketika di klik
-    var resultElement = document.getElementById("result-calculation"); //Mengambil hasil perhitungan BMI
-     var kategoriElement = document.querySelector(".form-result p:nth-child(3)");
+    // Mengambil hasil BMI dan kategori
+    var resultElement = document.getElementById("result-calculation"); // Hasil BMI
+    var kategoriElement = document.querySelector(".form-result p:nth-child(3)"); // Kategori BMI
+    var infoPenjelasanElement = document.querySelector(".info-penjelasan p"); // Penjelasan kategori
 
     // Menggunakan jsPDF untuk membuat file PDF
     const { jsPDF } = window.jspdf;
@@ -115,12 +116,24 @@ document
 
     // Menambahkan teks ke dalam PDF
     doc.text("Hasil Perhitungan BMI", 20, 20); // Judul
-    doc.text("Hasil: " + resultElement.innerText, 20, 30); // Hasil perhitungan
-    doc.text("Kategori: " + kategoriElement.innerText, 20, 40); // Kategor
+    doc.text("Hasil BMI: " + resultElement.innerText, 20, 30); // Hasil BMI
+    doc.text("Kategori: " + kategoriElement.innerText, 20, 40); // Kategori BMI
+    doc.text("Penjelasan:", 20, 50); // Header Penjelasan
+
+    // Menambahkan penjelasan kategori, memungkinkan teks panjang
+    let penjelasan = infoPenjelasanElement.innerText;
+    let lineHeight = 10;
+    let startY = 60;
+    let marginLeft = 20;
+    let maxWidth = 170;
+
+    // Menyisipkan teks dengan line wrapping
+    doc.text(doc.splitTextToSize(penjelasan, maxWidth), marginLeft, startY + lineHeight);
 
     // Mengunduh file PDF
     doc.save("hasil_bmi.pdf");
   });
+
 
 // Menambahkan event listener
 document

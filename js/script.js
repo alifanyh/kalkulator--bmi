@@ -115,6 +115,7 @@ document
     // Menambahkan teks ke dalam PDF
     doc.text("Hasil Perhitungan BMI", 20, 20); // Judul
     doc.text("Hasil: " + resultElement.innerText, 20, 30); // Hasil perhitungan
+    doc.text("Kategori: " + kategoriElement.innerText, 20, 40); // Kategor
 
     // Mengunduh file PDF
     doc.save("hasil_bmi.pdf");

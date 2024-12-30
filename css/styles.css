@@ -1,0 +1,225 @@
+/* Ini File CSS */
+
+/* Mengatur tampilan halaman */
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  background: #eef4fc;
+  line-height: 1.4;
+}
+
+.main-header {
+  text-align: center;
+  background-color: darksalmon;
+  padding: 5px 10px;
+}
+
+/* Mengatur Konten Website secara horizontal  */
+main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Mengatur ukuran dari Main Article pada Form */
+.main-section {
+  width: 40%;
+  text-align: justify;
+}
+
+/* Mengatur letak konten pada kotak form dan warna  */
+form {
+  background-color: antiquewhite;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Mengatur letak item pada form  */
+.form-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+
+/* Mengatur tampilan input angka pada form berat badan, usia, tinggi badan */
+input[type="number"] {
+  width: 50%;
+  padding: 10px 30px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Mengatur tata letak tombol button  */
+.form-button-container {
+  margin-top: 20px;
+  text-align: center;
+  padding: 16px;
+}
+
+/* Mengatur ukuran dan gaya radius pada button */
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Mengatur warna pada tombol Hitung */
+.bg-peru {
+  background-color: peru;
+}
+
+/* Mengatur warna pada tombol Reset */
+.bg-snow {
+  background-color: snow;
+}
+
+/* Mengatur warna teks pada tombol Hitung */
+.color-antique-white {
+  color: antiquewhite;
+}
+
+/* Menambahkan efek hover pada tombol */
+button:hover {
+  background-color: #f4a261;
+  transition: background-color 0.3s ease;
+}
+
+.bg-peru:hover {
+  background-color: #e76f51;
+}
+
+.bg-snow:hover {
+  background-color: #f1faee;
+}
+
+/* Mengatur letak tulisan Form Hasil */
+.header-form-hasil {
+  text-align: center;
+}
+
+/* Menampilkan Form hasil perhitungan BMI */
+.form-result {
+  text-align: center;
+  background-color: #e2cda8;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Menampilkan hasil perhitungan berupa angka. */
+#result-calculation {
+  font-size: 30px;
+}
+
+/* Tombol Unduh Default */
+#download-bmi-pdf {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+  transition: background-color 0.3s;
+}
+
+/* Animasi Denyut untuk Tombol Disable */
+#download-bmi-pdf:disabled {
+  animation: pulse 1.5s infinite;
+}
+
+/* Keyframes Animasi Denyut */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Tombol Enable */
+#download-bmi-pdf:not(:disabled) {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Memberikan space antara teks pada Catatan dengan Form Hasil di bagian atas */
+.info-catatan {
+  margin-top: 20px;
+}
+
+/* Membuat ukuran Border untuk isi konten yang terdapat pada Catatan dan memberikan warna */
+.info-penjelasan {
+  text-align: center;
+  background-color: #e1ecf1;
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Mengatur Teks menjadi rata kanan kiri */
+.info-penjelasan p {
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Mengatur ukuran dari Footer  */
+footer {
+  text-align: center;
+  background-color: darksalmon;
+  padding: 9px 10px;
+}
+
+/* Responsive Display */
+@media only screen and (max-width: 500px) {
+  main {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .main-section {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .form-item input[type="number"] {
+    width: 80%;
+  }
+
+  .form-button-container {
+    padding: 10px;
+  }
+
+  /* Menambahkan jarak antara tombol */
+  .form-button-container button {
+    margin-bottom: 10px;
+  }
+
+  /* Hapus margin bawah untuk tombol terakhir */
+  .form-button-container button:last-child {
+    margin-bottom: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Animasi untuk hasil perhitungan BMI */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
